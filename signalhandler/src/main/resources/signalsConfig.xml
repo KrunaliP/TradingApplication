@@ -1,0 +1,22 @@
+<signals>
+    <signal>
+        <id>1</id>
+        <command>setupUp</command>
+        <command>setAlgoParam,1,60</command>
+        <command>performCalc</command>
+        <command>submitToMarket</command>
+    </signal>
+    <signal>
+        <id>2</id>
+        <command>reverse</command>
+        <command>setAlgoParam,1,80</command>
+        <command>submitToMarket</command>
+    </signal>
+    <signal>
+        <id>3</id>
+        <command>setAlgoParam,1,90</command>
+        <command>setAlgoParam,2,15</command>
+        <command>performCalc</command>
+        <command>submitToMarket</command>
+    </signal>
+</signals>

@@ -23,11 +23,9 @@ public class SignalHandlerServer implements HttpHandler {
                 String[] param = pair.split("[=]");
                 String key = null;
                 String value = null;
-                if (param.length > 0) {
-                    key = URLDecoder.decode(param[0], System.getProperty("file.encoding"));
-                }
 
-                if (param.length > 1) {
+                if (param.length == 2) {
+                    key = URLDecoder.decode(param[0], System.getProperty("file.encoding"));
                     value = URLDecoder.decode(param[1], System.getProperty("file.encoding"));
                 }
 
@@ -53,7 +51,7 @@ public class SignalHandlerServer implements HttpHandler {
     @Override
     public void handle(HttpExchange he) throws IOException {
         // parse request
-        Map<String, Object> parameters = new HashMap<String, Object>();
+        Map<String, Object> parameters = new HashMap<>();
         URI requestedUri = he.getRequestURI();
         String query = requestedUri.getRawQuery();
         parseQuery(query, parameters);
