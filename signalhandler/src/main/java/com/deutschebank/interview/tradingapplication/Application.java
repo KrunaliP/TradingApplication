@@ -24,6 +24,10 @@ class Application implements SignalHandler {
             //reading the config xml
             String configFilePath = "signalhandler/src/main/resources/signalsConfig.xml";
 
+            //this if condition is currently for testing purpose
+            if (System.getProperty("user.dir").endsWith("signalhandler"))
+                configFilePath = "src/main/resources/signalsConfig.xml";
+
             File file = new File(configFilePath);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
